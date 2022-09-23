@@ -4,29 +4,29 @@ while (game:IsLoaded() == false) do
 end
 
 Player = game.Players.LocalPlayer
-Root_Folder = script.Parent
-VolumeButton = Root_Folder.Volume_Button
-PowerButton = Root_Folder.Power_Button
-PhoneGUI = Root_Folder.Phone
-PhoneBody = Root_Folder.Phone.Phone_Body
-Bottom_Button = Root_Folder.Phone.Phone_Body.Bottom_Button
-Speaker = Root_Folder.Phone.Phone_Body.Speaker
-Screen = Root_Folder.Phone.Phone_Body.Screen
-Boot_Loader = Screen.Boot_Loader
-Home_Launcher = Screen.Home_Launcher
-Notification_Bar = Screen.Notification_Bar
+RootFolder = script.Parent
+VolumeButton = RootFolder.VolumeButton
+PowerButton = RootFolder.PowerButton
+PhoneGUI = RootFolder.Phone
+PhoneBody = RootFolder.Phone.PhoneBody
+BottomButton = RootFolder.Phone.PhoneBody.BottomButton
+Speaker = RootFolder.Phone.PhoneBody.Speaker
+Screen = RootFolder.Phone.PhoneBody.Screen
+BootLoader = PhoneBody.BootLoader
+HomeLauncher = Screen.HomeLauncher
+NotificationBar = Screen.NotificationBar
 
 local Dictionary = {
-	["Root"] = Root_Folder,
+	["Root"] = RootFolder,
 	["Volume"] = VolumeButton,
 	["Power"] = PowerButton,
 	["Phone"] = PhoneGUI,
-	["TouchButton"] = Bottom_Button,
+	["TouchButton"] = BottomButton,
 	["Speaker"] = Speaker,
 	["Screen"] = Screen,
-	["BootLoader"] = Boot_Loader,
-	["HomeLauncher"] = Home_Launcher,
-	["Notification"] = Notification_Bar
+	["BootLoader"] = BootLoader,
+	["HomeLauncher"] = HomeLauncher,
+	["Notification"] = NotificationBar
 }
 
 function functions.Find_Path(FindItem, ParentFolder)
