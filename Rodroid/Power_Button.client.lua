@@ -1,12 +1,14 @@
 while (game:IsLoaded() == false) do
 end
 
-Root_Folder = script.Parent.Parent.Parent
-local exec = require(Root_Folder.Functions)
+RootFolder = script.Parent.Parent.Parent
+local exec = require(RootFolder.Functions)
 PlayerGUI = game.Players.LocalPlayer.PlayerGui
+boot_time = 0
 
 function GetObject(ObjectPath)
 	local Object = PlayerGUI
+	print(ObjectPath)
 	ObjectPath = string.split(ObjectPath, ".")
 	for startIndex = 1, #ObjectPath do
 		if ObjectPath[startIndex] ~= nil then
@@ -17,11 +19,11 @@ function GetObject(ObjectPath)
 end
 
 NotificationBar = GetObject(exec.Find_Path("nil", "Notification"))
-HomeScreen = GetObject(exec.Find_Path("Home_Screen","HomeLauncher"))
-Boot_Script = GetObject(exec.Find_Path("boot_animation_script","BootLoader"))
-Boot_Logo = GetObject(exec.Find_Path("rodroid_logo","BootLoader"))
-Boot_Logo_Branding = GetObject(exec.Find_Path("rodroid_logo_branding","BootLoader"))
-Boot_Loading_Icon = GetObject(exec.Find_Path("rodroid_loading_icon","BootLoader"))
+HomeScreen = GetObject(exec.Find_Path("HomeScreen","HomeLauncher"))
+Boot_Script = GetObject(exec.Find_Path("bootanimationscript","BootLoader"))
+Boot_Logo = GetObject(exec.Find_Path("rodroidlogo","BootLoader"))
+Boot_Logo_Branding = GetObject(exec.Find_Path("rodroidlogobranding","BootLoader"))
+Boot_Loading_Icon = GetObject(exec.Find_Path("rodroidloadingicon","BootLoader"))
 --Power_Button = exec.Get_Object("Power","Power_Button")
 PowerButton = script.Parent
 Screen = GetObject(exec.Find_Path("nil", "Screen"))
@@ -42,7 +44,7 @@ function system_start()
 
 	Boot_Loading_Icon.Visible = true
 	Boot_Script.Disabled = false
-	local boot_time = 0
+	--local boot_time = 0
 	while boot_time < 10 do
 		wait(1)
 		boot_time = boot_time + 1
