@@ -1,8 +1,8 @@
 while (game:IsLoaded() == false) do
 end
 
-Root_Folder = script.Parent.Parent
-local exec = require(Root_Folder.Functions)
+RootFolder = script.Parent.Parent
+local exec = require(RootFolder.Functions)
 PlayerGUI = game.Players.LocalPlayer.PlayerGui
 
 function GetObject(ObjectPath)
@@ -16,9 +16,9 @@ function GetObject(ObjectPath)
 	return Object
 end
 
-VolumeButtonUp = GetObject(exec.Find_Path("Volume_Up_Button", "Volume"))
-VolumeButtonDown = GetObject(exec.Find_Path("Volume_Down_Button", "Volume"))
-VolumeLevel = Root_Folder.Volume_Level
+VolumeButtonUp = GetObject(exec.Find_Path("VolumeUpButton", "Volume"))
+VolumeButtonDown = GetObject(exec.Find_Path("VolumeDownButton", "Volume"))
+VolumeLevel = RootFolder.VolumeLevel
 
 VolumeButtonUp.MouseButton1Down:Connect(function()
 	if VolumeLevel.Value ~= 100 then
